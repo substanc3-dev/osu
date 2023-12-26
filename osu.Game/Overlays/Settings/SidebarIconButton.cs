@@ -37,7 +37,29 @@ namespace osu.Game.Overlays.Settings
             {
                 section = value;
                 headerText.Text = value.Header;
-                iconContainer.Icon = value.CreateIcon();
+
+                iconContainer.Icon = new FillFlowContainer
+                {
+                    Direction = FillDirection.Vertical,
+                    RelativeSizeAxes = Axes.Both,
+                    Children = new Drawable[]
+                    {
+                        new ConstrainedIconContainer
+                        {
+                            Origin = Anchor.TopCentre,
+                            Anchor = Anchor.TopCentre,
+                            Size = new Vector2(20),
+                            Icon = value.CreateIcon(),
+                        },
+                        new OsuSpriteText
+                        {
+                            Origin = Anchor.TopCentre,
+                            Anchor = Anchor.TopCentre,
+                            Scale = new Vector2(0.7f),
+                            Text = value.Header,
+                        }
+                    }
+                };
             }
         }
 
@@ -58,7 +80,7 @@ namespace osu.Game.Overlays.Settings
         public SidebarIconButton()
         {
             RelativeSizeAxes = Axes.X;
-            Height = 46;
+            Height = 52;
 
             AddRange(new Drawable[]
             {
@@ -79,7 +101,7 @@ namespace osu.Game.Overlays.Settings
                         {
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
-                            Size = new Vector2(20),
+                            Size = new Vector2(62, 32),
                         },
                     }
                 },

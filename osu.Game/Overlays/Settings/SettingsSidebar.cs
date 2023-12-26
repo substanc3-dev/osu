@@ -10,8 +10,8 @@ namespace osu.Game.Overlays.Settings
 {
     public partial class SettingsSidebar : ExpandingButtonContainer
     {
-        public const float DEFAULT_WIDTH = 70;
-        public const int EXPANDED_WIDTH = 200;
+        public const float DEFAULT_WIDTH = 100;
+        public const int EXPANDED_WIDTH = 230;
 
         public SettingsSidebar()
             : base(DEFAULT_WIDTH, EXPANDED_WIDTH)
